@@ -1,4 +1,8 @@
 export const add = (expression: string): number => {
+  const negativeNumbers = expression.match(/\-[0-9]{1,}/g);
+  if (negativeNumbers?.length) {
+    throw new Error("negatives not allowed: " + negativeNumbers?.join(","));
+  }
   let delimiter = ",";
   let numbers = expression;
   if (expression.startsWith("//")) {
