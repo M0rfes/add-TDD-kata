@@ -1,9 +1,9 @@
 STEPS
 
-```sh
+```
    npm i
 ```
 
-```sh
+```
    npm run test
 ```
