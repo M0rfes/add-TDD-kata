@@ -8,4 +8,8 @@ describe("testing add function", () => {
   it("should return 0 for empty string", () => {
     expect(add("")).toBe(0);
   });
+
+  it("should work with , and /\n", () => {
+    expect(add("1\n2,3")).toBe(6);
+  });
 });
