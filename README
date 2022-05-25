@@ -1,9 +1,9 @@
 STEPS
 
-```bash
+```sh
    npm i
 ```
 
-```bash
+```sh
    npm run test
 ```
