@@ -49,7 +49,9 @@ export const parcer = (
   }
   const negativeNumbers = expression.match(/\-[0-9]{1,}/g);
   if (negativeNumbers?.length) {
-    throw new Error("negatives not allowed: " + negativeNumbers?.join(","));
+    throw new NegativeNumberError(
+      "negatives not allowed: " + negativeNumbers?.join(",")
+    );
   }
   let delimiter = defaultDelimiter;
   let numbers = expression;
@@ -75,3 +77,4 @@ export const reduce = (
 ) => numbers.reduce((acc, curr) => cb(acc, curr), initialValue);
 
 export class EmptyStringError extends Error {}
+export class NegativeNumberError extends Error {}

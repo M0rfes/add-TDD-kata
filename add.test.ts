@@ -1,4 +1,11 @@
-import { add, EmptyStringError, multiply, parcer, reduce } from "./add";
+import {
+  add,
+  EmptyStringError,
+  multiply,
+  NegativeNumberError,
+  parcer,
+  reduce,
+} from "./add";
 
 describe("testing add function", () => {
   let logger: (number: number) => any;
@@ -37,7 +44,7 @@ describe("testing add function", () => {
 
   it("should fail for negative numbers", () => {
     const t = () => parcer("-1,2,3,-4");
-    expect(t).toThrow(Error);
+    expect(t).toThrow(NegativeNumberError);
     expect(t).toThrow("negatives not allowed: -1,-4");
   });
 
